@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	li {
+		list-style-type: none;
+	}
+	.name {color: blue;}
+</style>
+<body>
+	<div ng-controller = "successController">
+	<div class = "container">
+		<h1>Hello</h1>
+		<a href="#/">Log Out</a> 
+		<form name = "postForm" ng-submit = "Post();">
+          Post: <textarea ng-model = "post.post"></textarea>
+          <input type='submit' value='Add my Post!'>
+	    </form>
+      <ul ng-repeat="post in posts track by $index">
+          <li class = "name">{{post._user.firstName}} {{post._user.lastName}} <span>{{post.created_at | date:'short'}}</span></li>
+          <li>{{ post.text }}</li>
+          <!-- <li>{{post.comments[0].text}}</li> -->
+          <ul ng-repeat="comment in post.comments">
+          	<li class = "name">{{comment.name}} {{comment.created_at | date:'short'}} </li>
+          	<li>{{comment.text}}</li>
+          </ul>
+          <form name = "postComment" ng-submit = "Comment(post._id, $index);">
+	          Comment: <input type = "text" ng-model = "commentText[$index].text">
+	          <input type='submit' value='Add my Comment!'>
+	      </form>
+       </ul>
+      </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "LoginAndReg",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "John Yu <John123Yu@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "angular-cookies": "^1.6.0"
+  },
+  "resolutions": {
+    "angular": "1.5.9"
+  }
+
+}
